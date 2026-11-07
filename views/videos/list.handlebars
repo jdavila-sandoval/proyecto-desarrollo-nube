@@ -1,0 +1,25 @@
+<h1>Videos</h1>
+
+<form class="filtros" action="/videos" method="get">
+  <input type="search" name="search" value="{{search}}" placeholder="Título del video" maxlength="100">
+  <select name="category">
+    <option value="">Todas las categorías</option>
+    {{#each categorias}}
+      <option value="{{_id}}" {{#if (igual _id ../category)}}selected{{/if}}>{{name}}</option>
+    {{/each}}
+  </select>
+  <button type="submit">Filtrar</button>
+  <a href="/videos">Limpiar</a>
+</form>
+
+<p class="meta">{{total}} resultado(s)</p>
+
+{{#if videos.length}}
+  <div class="rejilla">
+    {{#each videos}}
+      {{> video-card}}
+    {{/each}}
+  </div>
+{{else}}
+  <p class="vacio">No se encontraron videos con esos criterios.</p>
+{{/if}}

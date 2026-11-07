@@ -1,0 +1,14 @@
+<article class="tarjeta">
+  <a href="/videos/{{_id}}" class="miniatura">
+    {{#if thumbnailUrl}}
+      <img src="{{thumbnailUrl}}" alt="Miniatura de {{title}}" loading="lazy">
+    {{else}}
+      <div class="sin-miniatura">▶</div>
+    {{/if}}
+  </a>
+  <h3><a href="/videos/{{_id}}">{{title}}</a></h3>
+  <p class="meta">
+    {{author.username}} · <span class="etiqueta">{{category.name}}</span>
+  </p>
+  <p class="meta">{{views}} vistas · {{likesCount}} me gusta · {{fecha publishedAt}}</p>
+</article>

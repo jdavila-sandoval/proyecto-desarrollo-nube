@@ -1,0 +1,63 @@
+<header class="barra">
+  <div class="contenedor barra-contenido">
+    <a class="logo" href="/"><span class="logo-icono" aria-hidden="true">▶</span> VideoHub</a>
+    <nav class="barra-nav" aria-label="Principal">
+      <a href="/videos">Videos</a>
+    </nav>
+    <form class="buscador" action="/videos" method="get">
+      <input type="search" name="search" placeholder="Buscar videos por título" maxlength="100" aria-label="Buscar videos por título">
+      <button type="submit">Buscar</button>
+    </form>
+    <div class="cuenta">
+      {{#if user}}
+        <a class="boton-subir" href="/profile#subir">＋ <span>Subir video</span></a>
+
+        <!-- Menú de cuenta - el avatar muestra la insignia de notificaciones, tiene datos dummy, falta implementar funcionalidad -->
+        <details class="menu-usuario">
+          <summary aria-label="Cuenta de {{user.username}}: 3 notificaciones nuevas">
+            {{#if user.profileImage}}
+              <img class="avatar" src="{{user.profileImage}}" alt="">
+            {{else}}
+              <span class="avatar" aria-hidden="true">{{user.username}}</span>
+            {{/if}}
+            <span class="insignia" aria-hidden="true">3</span>
+          </summary>
+
+          <div class="menu-panel">
+            <div class="menu-cabecera">
+              {{#if user.profileImage}}
+                <img class="avatar" src="{{user.profileImage}}" alt="">
+              {{else}}
+                <span class="avatar" aria-hidden="true">{{user.username}}</span>
+              {{/if}}
+              <div>
+                <strong>{{user.username}}</strong>
+                <span class="meta">{{user.email}}</span>
+              </div>
+            </div>
+
+            <div class="menu-seccion">
+              <p class="menu-titulo">Notificaciones <span class="contador contador-alerta">3 nuevas</span></p>
+              {{> notificaciones-lista}}
+              <a class="menu-ver-todas" href="/profile#notificaciones">Ver todas las notificaciones</a>
+            </div>
+
+            <div class="menu-enlaces">
+              <a href="/profile">Mi perfil</a>
+              <a href="/profile#subir">Subir un video</a>
+              {{#if (igual user.role "admin")}}
+                <a class="menu-admin" href="/admin">Panel de administración</a>
+              {{/if}}
+              <form action="/logout" method="post">
+                <button class="menu-salir" type="submit">Cerrar sesión</button>
+              </form>
+            </div>
+          </div>
+        </details>
+      {{else}}
+        <a class="enlace-barra" href="/login">Iniciar sesión</a>
+        <a class="boton-claro" href="/register">Registrarse</a>
+      {{/if}}
+    </div>
+  </div>
+</header>

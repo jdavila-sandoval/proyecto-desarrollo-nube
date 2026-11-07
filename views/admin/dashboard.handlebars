@@ -1,0 +1,37 @@
+<section class="admin-pagina">
+  <div class="panel-cabecera">
+    <div>
+      <h1>Panel de administración</h1>
+      <p class="meta">Solo visible para usuarios con rol administrador.</p>
+    </div>
+    <span class="etiqueta etiqueta-admin">Administrador</span>
+  </div>
+
+<dl class="admin-metricas">
+    <div class="tarjeta-panel"><dt>Usuarios registrados</dt><dd>{{users}}</dd></div>
+    <div class="tarjeta-panel"><dt>Videos publicados</dt><dd>{{videos}}</dd></div>
+    <div class="tarjeta-panel"><dt>Categorías</dt><dd>{{categories}}</dd></div>
+    <div class="tarjeta-panel"><dt>Comentarios</dt><dd>{{comments}}</dd></div>
+  </dl>
+
+  <div class="tarjeta-panel">
+    <h2>Usuarios recientes</h2>
+    <div class="tabla-contenedor">
+      <table class="tabla">
+        <thead>
+          <tr><th>Usuario</th><th>Correo</th><th>Rol</th><th>Registro</th></tr>
+        </thead>
+        <tbody>
+          {{#each ultimosUsuarios}}
+            <tr>
+              <td><a href="/api/users/{{_id}}">{{username}}</a></td>
+              <td>{{email}}</td>
+              <td>{{#if (igual role "admin")}}<span class="etiqueta etiqueta-admin">admin</span>{{else}}<span class="etiqueta">user</span>{{/if}}</td>
+              <td>{{fecha createdAt}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
