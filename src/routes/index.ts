@@ -12,7 +12,7 @@ const router = Router();
 
 router.use("/auth", authRoutes);
 router.use("/users", userRoutes);
-router.use("/videos", videoRoutes);
+router.use("/videos", process.env.CLOUD_MODE === "true" ? cloudVideoRoutes : videoRoutes);
 router.use("/comments", commentRoutes);
 router.use("/reactions", reactionRoutes);
 router.use("/categories", categoryRoutes);
