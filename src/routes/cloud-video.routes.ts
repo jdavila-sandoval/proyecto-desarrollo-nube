@@ -13,6 +13,13 @@ import {
 
 const router = Router();
 
+router.use((_req, _res, next) => {
+  if (process.env.CLOUD_MODE !== "true") {
+    return next("router");
+  }
+  next();
+});
+
 router
   .route("/")
   .get(validate({ query: listCloudVideosQuery }), listCloudVideoController)
