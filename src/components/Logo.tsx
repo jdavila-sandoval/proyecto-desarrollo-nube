@@ -1,0 +1,12 @@
+import { Link } from "react-router-dom";
+
+export function Logo() {
+  return (
+    <Link className="logo" to="/" aria-label="EduStream, ir al inicio">
+      <span className="logo-mark">▶</span>
+      <span>
+        Edu<span>Stream</span>
+      </span>
+    </Link>
+  );
+}
