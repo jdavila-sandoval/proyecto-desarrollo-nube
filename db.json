@@ -1,0 +1,59 @@
+{
+  "users": [
+    {
+      "id": "u-docente",
+      "name": "Docente Demo",
+      "email": "docente@edustream.mx",
+      "passwordHash": "$2a$10$/Pm7RXdEVs1MZcp14xm6qOM9ytT.cD58tlypMQN.qJ3IrxfJeugeW",
+      "role": "docente"
+    },
+    {
+      "id": "u-alumno",
+      "name": "Alumno Demo",
+      "email": "alumno@edustream.mx",
+      "passwordHash": "$2a$10$/Pm7RXdEVs1MZcp14xm6qOM9ytT.cD58tlypMQN.qJ3IrxfJeugeW",
+      "role": "alumno"
+    }
+  ],
+  "videos": [
+    {
+      "id": 4,
+      "title": "Patrones de arquitectura web",
+      "subject": "Tecnologías en el Cliente",
+      "code": "TEC-310",
+      "unit": "Unidad 4: Arquitectura",
+      "description": "Patrones comunes para organizar aplicaciones web.",
+      "visibility": "group",
+      "duration": "41:50",
+      "uploadedAt": "05 oct 2026",
+      "views": 151,
+      "thumbnailClass": "thumb-green"
+    },
+    {
+      "id": 5,
+      "title": "Introducción a Kubernetes",
+      "subject": "Desarrollo en la Nube",
+      "code": "NUB-204",
+      "unit": "Unidad 5: Kubernetes",
+      "description": "Conceptos básicos de orquestación de contenedores.",
+      "visibility": "campus",
+      "duration": "29:44",
+      "uploadedAt": "02 oct 2026",
+      "views": 129,
+      "thumbnailClass": "thumb-pink"
+    },
+    {
+      "title": "test2026",
+      "subject": "Tecnologías en el Cliente",
+      "code": "test",
+      "unit": "test",
+      "description": "test",
+      "visibility": "campus",
+      "duration": "00:00",
+      "uploadedAt": "01 nov 2026",
+      "views": 0,
+      "thumbnailClass": "thumb-blue",
+      "id": 6
+    }
+  ]
+}
